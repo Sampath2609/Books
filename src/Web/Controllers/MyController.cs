@@ -16,15 +16,26 @@ namespace Web.Controllers
         }
         public IActionResult ShowInfo()
         {
-            return View();
+            return Content("I am Sampath");
+        }
+        public IActionResult ShowJSon()
+        {
+            return Json(new
+            {
+                name = "Sampath Vagicharla"
+            });
         }
 
+        public IActionResult showHTML()
+        {
+            var s = "<!DOCTYPE HTML><html><head>Sampath Vagicharla!</head><body> I am Sampath Vagicharla.</body></html>";
+            return Content(s, "text/html");
+        }
 
-        public IActionResult Privacy()
+        public IActionResult App()
         {
             return View();
         }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
